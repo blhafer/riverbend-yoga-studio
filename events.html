@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="See Riverbend Yoga Studio's monthly workshops and request a spot in a class or event.">
+  <title>Workshops and Events | Riverbend Yoga Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="images/yoga-logo_c.png" alt="Riverbend Yoga Studio home" width="1872" height="1359">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Classes and Pricing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html" aria-current="page">Workshops and Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Workshops and Events</h1>
+    <p class="intro">Each month we host one longer workshop that goes deeper into a single topic. Workshops are open to all levels, and space is limited to 16 students.</p>
+
+    <section class="media-row">
+      <figure>
+        <img src="images/yoga-workshop_c.png" alt="Instructor leading a seated meditation for a diverse group of students on mats" width="1200" height="737">
+        <figcaption>Our monthly workshops give you extra time to slow down, ask questions, and practice with a supportive group.</figcaption>
+      </figure>
+      <div>
+        <h2>Monthly Workshop List</h2>
+        <ul class="event-list">
+          <li><h3>Breath and Restore: Yoga for Stress Relief</h3><p>Saturday, December 12, 2026 &middot; 1:00 to 3:00 p.m. &middot; $35</p></li>
+          <li><h3>Beginner Foundations</h3><p>Saturday, January 9, 2027 &middot; 1:00 to 3:00 p.m. &middot; $30</p></li>
+          <li><h3>Chair Yoga for Healthy Joints</h3><p>Saturday, February 13, 2027 &middot; 10:30 a.m. to 12:00 p.m. &middot; $25</p></li>
+          <li><h3>Desk Reset: Yoga for Busy Professionals</h3><p>Saturday, March 13, 2027 &middot; 1:00 to 3:00 p.m. &middot; $30</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="request-form">
+      <h2>Request a Spot</h2>
+      <p>Tell us which class or workshop interests you, and we will reply within one business day to confirm your spot. Fields marked with an asterisk (*) are required.</p>
+      <form class="request-form" action="#" method="post">
+        <fieldset>
+          <legend>About You</legend>
+          <p>
+            <label for="full-name">Name *</label>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" required minlength="2" maxlength="60">
+          </p>
+          <p>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </p>
+          <fieldset class="choice-group">
+            <legend>Experience level *</legend>
+            <p class="choice">
+              <input type="radio" id="level-new" name="experience" value="new" required>
+              <label for="level-new">New to yoga</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="level-some" name="experience" value="some">
+              <label for="level-some">Some experience</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="level-regular" name="experience" value="regular">
+              <label for="level-regular">I practice regularly</label>
+            </p>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Interest</legend>
+          <p>
+            <label for="interest">Class or event interest *</label>
+            <select id="interest" name="interest" required>
+              <option value="">Choose a class or workshop</option>
+              <optgroup label="Classes">
+                <option value="gentle">Gentle Yoga</option>
+                <option value="vinyasa">Vinyasa Flow</option>
+                <option value="restorative">Restorative Yoga</option>
+                <option value="private">Private Session</option>
+              </optgroup>
+              <optgroup label="Workshops">
+                <option value="breath-restore">Breath and Restore (December 12)</option>
+                <option value="foundations">Beginner Foundations (January 9)</option>
+                <option value="chair-yoga">Chair Yoga for Healthy Joints (February 13)</option>
+                <option value="desk-reset">Desk Reset (March 13)</option>
+              </optgroup>
+            </select>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>How Should We Reach You?</legend>
+          <fieldset class="choice-group">
+            <legend>Preferred contact method *</legend>
+            <p class="choice">
+              <input type="radio" id="contact-email" name="contact-method" value="email" required>
+              <label for="contact-email">Email</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="contact-phone" name="contact-method" value="phone">
+              <label for="contact-phone">Phone call</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="contact-text" name="contact-method" value="text">
+              <label for="contact-text">Text message</label>
+            </p>
+          </fieldset>
+          <p>
+            <label for="phone">Phone number, if you prefer a call or text (format: 555-555-5555)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" title="Enter a 10-digit phone number in the format 555-555-5555">
+          </p>
+          <p>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500" placeholder="Share any questions, goals, or accessibility needs."></textarea>
+          </p>
+        </fieldset>
+
+        <button type="submit">Request My Spot</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h2>Studio Hours</h2>
+      <ul>
+        <li>Monday through Friday: 6:30 a.m. to 8:30 p.m.</li>
+        <li>Saturday: 8:00 a.m. to 1:00 p.m.</li>
+        <li>Sunday: 3:30 p.m. to 6:00 p.m.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-tagline">Calm, inclusive yoga for every body.</p>
+      <p><a href="events.html#request-form">Request information or a spot in class</a></p>
+      <p>&copy; 2026 Riverbend Yoga Studio. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
