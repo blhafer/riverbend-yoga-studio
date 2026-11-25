@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -50,18 +51,22 @@
     <section id="request-form">
       <h2>Request a Spot</h2>
       <p>Tell us which class or workshop interests you, and we will reply within one business day to confirm your spot. Fields marked with an asterisk (*) are required.</p>
-      <form class="request-form" action="#" method="post">
+      <p id="saved-details-note" class="saved-note" hidden>Welcome back, <span id="returning-name"></span>. We filled in your contact details from your last request. <button type="button" id="forget-details" class="button-secondary">Clear my saved details</button></p>
+      <p id="form-status" class="form-status" role="status" tabindex="-1"></p>
+      <form id="request-spot-form" class="request-form" action="#" method="post">
         <fieldset>
           <legend>About You</legend>
           <p>
             <label for="full-name">Name *</label>
-            <input type="text" id="full-name" name="full-name" autocomplete="name" required minlength="2" maxlength="60">
+            <input type="text" id="full-name" name="full-name" aria-describedby="full-name-error" autocomplete="name" required minlength="2" maxlength="60">
+            <span id="full-name-error" class="error-message" hidden></span>
           </p>
           <p>
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <input type="email" id="email" name="email" aria-describedby="email-error" autocomplete="email" required>
+            <span id="email-error" class="error-message" hidden></span>
           </p>
-          <fieldset class="choice-group">
+          <fieldset id="experience-group" class="choice-group" aria-describedby="experience-error">
             <legend>Experience level *</legend>
             <p class="choice">
               <input type="radio" id="level-new" name="experience" value="new" required>
@@ -75,6 +80,7 @@
               <input type="radio" id="level-regular" name="experience" value="regular">
               <label for="level-regular">I practice regularly</label>
             </p>
+            <p id="experience-error" class="error-message" hidden></p>
           </fieldset>
         </fieldset>
 
@@ -82,7 +88,7 @@
           <legend>Your Interest</legend>
           <p>
             <label for="interest">Class or event interest *</label>
-            <select id="interest" name="interest" required>
+            <select id="interest" name="interest" required aria-describedby="interest-error">
               <option value="">Choose a class or workshop</option>
               <optgroup label="Classes">
                 <option value="gentle">Gentle Yoga</option>
@@ -97,12 +103,13 @@
                 <option value="desk-reset">Desk Reset (March 13)</option>
               </optgroup>
             </select>
+            <span id="interest-error" class="error-message" hidden></span>
           </p>
         </fieldset>
 
         <fieldset>
           <legend>How Should We Reach You?</legend>
-          <fieldset class="choice-group">
+          <fieldset id="contact-method-group" class="choice-group" aria-describedby="contact-method-error">
             <legend>Preferred contact method *</legend>
             <p class="choice">
               <input type="radio" id="contact-email" name="contact-method" value="email" required>
@@ -116,14 +123,17 @@
               <input type="radio" id="contact-text" name="contact-method" value="text">
               <label for="contact-text">Text message</label>
             </p>
+            <p id="contact-method-error" class="error-message" hidden></p>
           </fieldset>
           <p>
-            <label for="phone">Phone number, if you prefer a call or text (format: 555-555-5555)</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" title="Enter a 10-digit phone number in the format 555-555-5555">
+            <label for="phone">Phone number, required if you prefer a call or text (format: 555-555-5555)</label>
+            <input type="tel" id="phone" name="phone" aria-describedby="phone-error" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" title="Enter a 10-digit phone number in the format 555-555-5555">
+            <span id="phone-error" class="error-message" hidden></span>
           </p>
           <p>
             <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500" placeholder="Share any questions, goals, or accessibility needs."></textarea>
+            <textarea id="message" name="message" aria-describedby="message-error" rows="5" cols="40" required minlength="10" maxlength="500" placeholder="Share any questions, goals, or accessibility needs."></textarea>
+            <span id="message-error" class="error-message" hidden></span>
           </p>
         </fieldset>
 

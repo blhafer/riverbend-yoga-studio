@@ -411,6 +411,122 @@ textarea {
   align-self: flex-start;
 }
 
+/* ---------- Touchstone 4: class finder ---------- */
+.button-secondary {
+  background-color: var(--color-white);
+  color: var(--color-teal);
+  border: 2px solid var(--color-teal);
+}
+
+.button-secondary[aria-pressed="true"] {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+}
+
+.button-secondary[aria-pressed="true"]::before {
+  content: "\2713  ";
+}
+
+.finder-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0 var(--space-md);
+}
+
+.finder-controls p {
+  margin: 0 0 var(--space-sm);
+}
+
+.finder-count {
+  font-weight: 700;
+}
+
+.finder-card .badge {
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+  padding: 0.1rem 0.6rem;
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.card-actions .button,
+.card-actions button {
+  padding: 0.6rem var(--space-sm);
+  font-size: 0.98rem;
+}
+
+.saved-classes {
+  padding-top: var(--space-sm);
+  border-top: 2px dashed var(--color-teal);
+}
+
+/* ---------- Touchstone 4: form feedback ---------- */
+.error-message {
+  display: block;
+  margin-top: var(--space-xs);
+  padding: 0.35rem 0.75rem;
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+.error-message::before {
+  content: "Error: ";
+}
+
+.error-message[hidden] {
+  display: none;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"],
+fieldset[aria-invalid="true"] {
+  border: 3px solid var(--color-gold);
+  border-left-width: 10px;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status {
+  max-width: 720px;
+  padding: var(--space-sm);
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+.form-status.is-error {
+  border: 3px solid var(--color-gold);
+}
+
+.form-status.is-success {
+  background-color: var(--color-teal);
+  color: var(--color-white);
+}
+
+.saved-note {
+  max-width: 720px;
+  padding: var(--space-sm);
+  border: 2px solid var(--color-teal);
+  border-radius: var(--radius);
+}
+
+.saved-note button {
+  margin-top: var(--space-xs);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   display: flex;
@@ -520,6 +636,24 @@ textarea {
     min-width: 0;
   }
 
+  .finder-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .finder-controls p {
+    flex: 1 1 14rem;
+  }
+
+  .finder-controls p:last-child {
+    flex: 0 0 auto;
+  }
+
+  .finder-results .card {
+    flex: 0 1 calc(50% - var(--space-md));
+  }
+
   .site-footer {
     flex-direction: row;
     justify-content: space-between;
@@ -542,5 +676,9 @@ textarea {
 
   .price-grid .card {
     flex: 1 1 calc(33% - var(--space-md));
+  }
+
+  .finder-results .card {
+    flex: 0 1 calc(33.333% - var(--space-md));
   }
 }

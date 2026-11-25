@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -49,6 +50,42 @@
           <p>Long, fully supported rests with bolsters and blankets to calm the nervous system and ease stress.</p>
           <p class="meta">60 minutes &middot; All levels</p>
         </article>
+      </div>
+    </section>
+
+    <section id="class-finder" class="panel finder">
+      <h2>Find Your Class</h2>
+      <p>Tell us your experience and the time of day that fits your schedule, and we will show the weekly classes that match. Save the ones you like, and this page will remember your choices the next time you visit.</p>
+      <form id="finder-form" class="finder-controls">
+        <p>
+          <label for="finder-level">Your experience</label>
+          <select id="finder-level" name="level">
+            <option value="any">Show all levels</option>
+            <option value="new">New to yoga</option>
+            <option value="some">Some experience</option>
+            <option value="regular">I practice regularly</option>
+          </select>
+        </p>
+        <p>
+          <label for="finder-time">Best time of day</label>
+          <select id="finder-time" name="period">
+            <option value="any">Any time</option>
+            <option value="morning">Morning (before noon)</option>
+            <option value="midday">Lunchtime</option>
+            <option value="evening">Late afternoon or evening</option>
+          </select>
+        </p>
+        <p>
+          <button type="button" id="finder-reset" class="button-secondary">Show all classes</button>
+        </p>
+      </form>
+      <p id="finder-count" class="finder-count" aria-live="polite"></p>
+      <ul id="finder-results" class="card-grid finder-results"></ul>
+      <noscript><p>Turn on JavaScript to use the class finder, or see the full weekly schedule on the <a href="index.html">Home page</a>.</p></noscript>
+      <div class="saved-classes">
+        <h3>My Saved Classes</h3>
+        <p id="saved-empty">You have not saved any classes yet. Choose "Save this class" on any class above to keep it here.</p>
+        <ul id="saved-list"></ul>
       </div>
     </section>
 
